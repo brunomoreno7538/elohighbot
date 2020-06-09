@@ -4,7 +4,8 @@ const fs = require("fs");
 const config = require("./config.json");
 
 client.on("ready", () => {
-  console.log(`Logged in as ${client.user.tag}!`);
+  console.log(`BOT: ${client.user.tag} online!`);
+  client.user.setActivity("elojobhigh.com.br", { type: "WATCHING" });
 });
 
 client.on("message", async (message) => {

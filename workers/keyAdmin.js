@@ -1,6 +1,6 @@
 const fs = require("fs");
 
-const dataName = "keyAdmin.txt";
+const dataName = "keys/keyAdmin.txt";
 let exists = false;
 const keys = [];
 

@@ -1,6 +1,6 @@
 const fs = require("fs");
 
-const dataName = "keyBooster.txt";
+const dataName = "keys/keyBooster.txt";
 let exists = false;
 const keys = [];
 
