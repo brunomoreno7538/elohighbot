@@ -24,7 +24,6 @@ client.on("message", async (message) => {
   ) {
     return;
   }
-
   const args = message.content.split(" ").slice(1);
   let command = message.content.split(" ")[0];
   command = command.slice(config.prefix.length);

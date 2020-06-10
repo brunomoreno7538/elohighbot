@@ -1,5 +1,6 @@
 const lineByLine = require("n-readlines");
 const config = require("../config.json");
+const deleteM = require("../workers/deleteMessage");
 
 module.exports.run = async (client, message, args) => {
   if (message.member.roles.cache.has(config.admin)) {
@@ -22,12 +23,14 @@ module.exports.run = async (client, message, args) => {
       dataName = "./keys/keyAdmin.txt";
       baseName = "Administrador";
     } else {
-      dataName == undefined;
-      baseName == undefined;
+      dataName = undefined;
+      baseName = undefined;
     }
 
     if (dataName == undefined && baseName == undefined) {
-      message.channel.send("Cargo inválido!");
+      message.channel.send("Cargo inválido!").then((msg) => {
+        deleteM.function(msg);
+      });
     } else {
       const lineByLine = require("n-readlines");
       const liner = new lineByLine(dataName);
@@ -63,6 +66,9 @@ module.exports.run = async (client, message, args) => {
       });
     }
   } else {
-    message.channel.send("Usuário sem permissão!");
+    message.channel.send("Usuário sem permissão!").then((msg) => {
+      deleteM.function(msg);
+    });
   }
+  deleteM.function(message);
 };
